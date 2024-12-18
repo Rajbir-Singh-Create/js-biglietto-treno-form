@@ -1,11 +1,11 @@
 let kmToCommute = document.querySelector(".kmToCommute");
 let age = document.querySelector(".age");
 const calculatePriceButton = document.querySelector(".calculatePriceButton");
-let ticketPrice = document.querySelector(".result");
+let result = document.querySelector(".result");
 
 let underAgeDiscout = 0;
 let over65Discount = 0;
-let result = 0;
+let ticketPrice = 0;
 const pricePerKm = 0.21;
 
 calculatePriceButton.addEventListener('click', function(event){
@@ -21,7 +21,6 @@ calculatePriceButton.addEventListener('click', function(event){
         // console.log("Km da percorrere: ",kmToCommute);
         ticketPrice = pricePerKm * kmToCommute;
         // console.log("Prezzo del biglietto: ",ticketPrice);
-    
 
         // price applied for underage and elderly people
         if(age.value === "underAge") {
@@ -37,4 +36,6 @@ calculatePriceButton.addEventListener('click', function(event){
             console.log((`Il prezzo finale è di € ${ticketPrice}`));
         }
     }
+
+    result.innerHTML = `Il prezzo finale è di € ${ticketPrice}`;
 });
