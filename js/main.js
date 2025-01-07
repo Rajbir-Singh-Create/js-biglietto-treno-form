@@ -24,8 +24,7 @@ calculatePriceButton.addEventListener('click', function(event){
     // console.log("Km da percorrere: ",kmToCommute);
 
     if(isNaN(kmToCommute)){
-        console.log("valore non valido");
-        alert("Inserisci un numero per favore"); // TODO design this element
+        result.innerHTML = "Inserisci il numero di Km per favore"
     } else {
         setTimeout(() => {
             ticketPrice = pricePerKm * kmToCommute;
@@ -47,6 +46,6 @@ calculatePriceButton.addEventListener('click', function(event){
             statusText.innerHTML = originalStatusText;
     
             result.innerHTML = `Il prezzo finale è di € ${ticketPrice}`;
-        }, 2000);
+        }, 1000);
     }
 });
