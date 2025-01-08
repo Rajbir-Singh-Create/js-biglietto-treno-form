@@ -25,6 +25,8 @@ calculatePriceButton.addEventListener('click', function(event){
 
     if(isNaN(kmToCommute)){
         result.innerHTML = "Inserisci il numero di Km per favore"
+    } else if(age.value ==="selectAge"){
+        result.innerHTML = "Inserisci la tua fascia di età per favore"
     } else {
         setTimeout(() => {
             ticketPrice = pricePerKm * kmToCommute;

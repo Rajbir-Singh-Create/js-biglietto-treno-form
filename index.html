@@ -49,7 +49,7 @@
             
 
             <!-- Promo section -->
-            <div class="alert alert-dark my-5" role="alert">
+            <div class="alert alert-light my-5" role="alert">
                 <h4>Promozione!</h4>
                 <p>
                     Ricevi uno sconto del 20% se hai meno di 18 anni, il 40% se sei over 65.
@@ -62,19 +62,20 @@
                     <label for="kmToCommute" class="form-label">Inserisci i Km da percorrere</label>
                     <input type="text" class="form-control kmToCommute" id="kmToCommute" placeholder="Km">
                 </div>
-                <select class="form-select mb-3" aria-label="Seleziona la tua età">
-                    <option selected>Seleziona la tua età</option>
+                <select class="form-select mb-3 age" aria-label="Seleziona la tua età">
+                    <option value="selectAge" selected>Seleziona la tua età</option>
                     <option value="underAge">14-17</option>
                     <option value="adult">18-64</option>
                     <option value="over65">65+</option>
                 </select>
-                <!-- <input class="btn btn-primary calculatePriceButton" type="submit" value="Calcola prezzo"> -->
                 <button class="btn btn-primary calculatePriceButton" type="submit">
                     <span id="spinner" class="d-none spinner-border spinner-border-sm" aria-hidden="true"></span>
                     <span class="status" role="status">Calcola prezzo</span>
                 </button>
             </form>
-            <div class="container result">
+
+            <!-- Result -->
+            <div class="container result border-top pt-3">
                 <p>Prezzo finale:</p>
             </div>
         </div>
