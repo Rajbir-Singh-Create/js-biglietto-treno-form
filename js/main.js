@@ -10,15 +10,10 @@ const pricePerKm = 0.21;
 
 calculatePriceButton.addEventListener('click', function(event){
     event.preventDefault();
-
-    calculatePriceButton.disabled = true;
     
     const spinnerElement = calculatePriceButton.querySelector('#spinner')
     const statusText = calculatePriceButton.querySelector('.status');
     const originalStatusText = statusText.innerHTML;
-
-    spinnerElement.classList.toggle('d-none');
-    statusText.innerHTML = `Calcolo il prezzo del biglietto...`;
 
     kmToCommute = parseFloat(kmToCommute.value);
     // console.log("Km da percorrere: ",kmToCommute);
@@ -28,6 +23,10 @@ calculatePriceButton.addEventListener('click', function(event){
     } else if(age.value ==="selectAge"){
         result.innerHTML = "Inserisci la tua fascia di età per favore"
     } else {
+        calculatePriceButton.disabled = true;
+        spinnerElement.classList.toggle('d-none');
+        statusText.innerHTML = `Calcolo il prezzo del biglietto...`;
+
         setTimeout(() => {
             ticketPrice = pricePerKm * kmToCommute;
             // console.log("Prezzo del biglietto: ",ticketPrice);
