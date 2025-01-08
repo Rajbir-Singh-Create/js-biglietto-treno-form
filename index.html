@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -10,13 +10,13 @@
     <title>Biglietto del treno form</title>
 </head>
 
-<body class="text-bg-dark">
+<body>
     <header>
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container-fluid">
                 <img class="me-2" src="./img/train-logo.png" alt="train logo" width="75">
-                <button class="navbar-toggler border-white" type="button" data-bs-theme="dark" data-bs-toggle="collapse"
+                <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -44,7 +44,7 @@
             <!-- Title section -->
              <div class="container d-flex">
                 <img src="./img/transit_ticket.png" alt="train ticket icon" width="60" class="me-3">
-                <h1>Acquista il tuo biglietto</h1>
+                <h1 class="my-1">Acquista il tuo biglietto</h1>
              </div>
             
 
@@ -62,7 +62,7 @@
                     <label for="kmToCommute" class="form-label">Inserisci i Km da percorrere</label>
                     <input type="text" class="form-control kmToCommute" id="kmToCommute" placeholder="Km">
                 </div>
-                <select class="form-select mb-3 age" aria-label="Seleziona la tua età">
+                <select class="form-select mb-3" aria-label="Seleziona la tua età">
                     <option selected>Seleziona la tua età</option>
                     <option value="underAge">14-17</option>
                     <option value="adult">18-64</option>
