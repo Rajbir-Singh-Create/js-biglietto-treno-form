@@ -11,10 +11,12 @@ const pricePerKm = 0.21;
 calculatePriceButton.addEventListener('click', function(event){
     event.preventDefault();
     
+    // button status elements
     const spinnerElement = calculatePriceButton.querySelector('#spinner')
     const statusText = calculatePriceButton.querySelector('.status');
     const originalStatusText = statusText.innerHTML;
 
+    // string conversion to float
     kmToCommute = parseFloat(kmToCommute.value);
     // console.log("Km da percorrere: ",kmToCommute);
 
@@ -23,6 +25,7 @@ calculatePriceButton.addEventListener('click', function(event){
     } else if(age.value ==="selectAge"){
         result.innerHTML = "Inserisci la tua fascia di età per favore"
     } else {
+        // changing button status
         calculatePriceButton.disabled = true;
         spinnerElement.classList.toggle('d-none');
         statusText.innerHTML = `Calcolo il prezzo del biglietto...`;
@@ -34,14 +37,18 @@ calculatePriceButton.addEventListener('click', function(event){
             // price applied for underage and elderly people
             if(age.value === "underAge") {
                 underAgeDiscout = ticketPrice - ((ticketPrice * 20) / 100);
-                ticketPrice = underAgeDiscout.toFixed(2).replace(".",",");
+                ticketPrice = underAgeDiscout;
             } else if (age.value === "over65"){
                 over65Discount = ticketPrice - ((ticketPrice * 40) / 100);
-                ticketPrice = over65Discount.toFixed(2).replace(".",",");
+                ticketPrice = over65Discount;
             } else {
-                ticketPrice = ticketPrice.toFixed(2).replace(".",",");
+                ticketPrice;
             }
 
+            // ticket price conversion
+            ticketPrice = ticketPrice.toFixed(2).replace(".",",");
+
+            // reset button status
             calculatePriceButton.disabled = false;
             spinnerElement.classList.toggle('d-none');
             statusText.innerHTML = originalStatusText;
